@@ -1,0 +1,6 @@
+﻿Chamado;Plataforma;Data abert;Data fecha;Problema;Cliente;Analista;Departamento;Status;Categoria;Link chamado;Resumo da ação
+9804;Jira;11/06/2025;12/06/2025;Disponibilidade de licença na BDP 3200;Chistian Durval Ferreira;Gustavo Tiano;Sistemas;Concluído;Limpeza Sispetro;https://allservices-helpdesk.atlassian.net/jira/servicedesk/projects/AL/queues/custom/73/AL-9804;Limpeza realizada na BDP mencionada pelo usuário.
+9803;Jira;11/06/2025;12/06/2025;Disponibilidade de licença BDP 3300;Luis Lima;Gustavo Tiano;Sistemas;Concluído;Limpeza Sispetro;https://allservices-helpdesk.atlassian.net/jira/servicedesk/projects/AL/queues/custom/73/AL-9803;Licença liberada para o usuário
+269928;Manager;;12/06/2025;Erro de integração de Ordem de Compra;Denis Alves de Alcantara;Gustavo Tiano;Sistemas;Repassado para N2;Configuração sistêmica;https://helpdesk.gruporefit.com/WorkOrder.do?woMode=viewWO&woID=269928;Chamado transferido para fila de Sustentação por se tratar de configurações no integrador de OC entre bases.
+1;Chat àgil;;12/06/2025;Problema com impressão de relatório;Alana Soares;Gustavo Tiano;Infraestrutura;Concluído;Configuração sistêmica;;Reinicialização de RDS
+2159233;manager;;12/06/2025;Liberação de licença na BDP 3300;David Silva;Gustavo Tiano;Sistemas;Concluído;Limpeza Sispetro;;Licença liberada para o usuário conforme solicitado.
