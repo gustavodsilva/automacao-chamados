@@ -3,97 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <title>Registro de Chamados</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=1.0.1">
 </head>
 
 <body>
 
   <div class="container">
+
     <h1>Registro de Chamados</h1>
 
     <form action="salvar.php" method="POST">
-      
-      <p> Chamado
-      <input type="text" id="numero" name="numero" placeholder="nº do chamado" required>
-      </p>
 
-      <p>Portal
-      <input type="text" id="portal" name="portal" placeholder="manager, jira ou web posto">
-      </p>
+      <div class="form-group">
 
+        <label for="numero">Nº do Chamado</label>
+        <input type="text" id="numero" name="numero" placeholder="nº do chamado" required>
 
-      <p>Dt abertura
-        <input type="date" id="dt_abertura" placeholder="dt abertura" name="dt_abertura" required>
-      </p>
+      </div>
 
-      <p>Dt conclusão
-        <input type="date" id="dt_conclusao" placeholder="dt conclusão" name="dt_conclusao" required>
-      </p>
+      <div class="form-group">
 
-    <textarea id="detalhe" name="descricao" placeholder="Detalhe da solicitação..." required></textarea>
-      
-      <p>Usuário solicitante
-      <input type="text" id="cliente" name="cliente">
-      </p>
+        <label for="portal">Portal</label>
+        <input type="text" id="portal" name="portal" placeholder="manager, jira ou web posto">
 
-      <p>Atendente
-      <input type="text" id="analista" name="analista">
-      </p>
+      </div>
 
-      <p>Departamento
-      <input type="text" id="departamento" name="departamento" placeholder="Departamento (Ex: TI, Suporte)">
-      </p>
+      <div class="form-group">
 
-      <p>Status
-      <select name="status" id="status" required>
-        <option value="" disabled selected>Selecione o status</option>
-        <option value="Aguardando retorno">Aguardando retorno</option>
-        <option value="Concluído">Concluído</option>
-        <option value="Falta de retorno">Falta de retorno</option>
-        <option value="Repassado para N2">Repassado para N2</option>
-      </select>
-      </p>
+        <label for="dt_abertura">Data de Abertura</label>
+        <input type="date" id="dt_abertura" name="dt_abertura" required>
 
-      <p>Categoria
-        <select id="categoria" name="categoria" required>
-          <option value="" disabled selected>Selecione a categoria</option>
-          <option value="Configuração sistêmica">Configuração sistêmica</option>
-          <option value="Erro">Erro</option>
-          <option value="Dúvida">Dúvida</option>
-          <option value="Solicitação">Solicitação</option>
-          <option value="Permissão no sistema">Permissão no sistema</option>
-          <option value="Atualização de informação">Atualização de informação</option>
-          <option value="Criação/Edição/Atualização cadastro usuários">Criação/Edição/Atualização cadastro usuários</option>
-          <option value="Limpeza Sispetro">Limpeza Sispetro</option>
-          <option value="Reinicialização de serviços">Reinicialização de serviços</option>
-          <option value="Edição/permissão em relatórios e layouts">Edição/permissão em relatórios e layouts</option>
-          <option value="Edição/Atualização de Qlik">Edição/Atualização de Qlik</option>
-          <option value="Edição/Atualização de Power BI">Edição/Atualização de Power BI</option>
-          <option value="Suporte">Suporte ao usuário</option>
-          <option value="Esclarecimento de dúvidas">Esclarecimento de dúvidas</option>
-          <option value="Habilitação de campo">Habilitação de campo</option>
+      </div>
+
+      <div class="form-group">
+
+        <label for="dt_conclusao">Data de Conclusão</label>
+        <input type="date" id="dt_conclusao" name="dt_conclusao" required>
+
+      </div>
+
+      <div class="form-group full">
+
+        <label for="detalhe">Detalhe da Solicitação</label>
+        <textarea id="detalhe" name="descricao" rows="2" placeholder="Resumo breve da solicitação..." required></textarea>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="cliente">Usuário Solicitante</label>
+        <input type="text" id="cliente" name="cliente">
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="analista">Atendente</label>
+        <input type="text" id="analista" name="analista">
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="departamento">Departamento</label>
+        <input type="text" id="departamento" name="departamento" placeholder="Ex: TI, Suporte">
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="status">Status</label>
+        <select name="status" id="status" required>
+          <option value="" disabled selected>Selecione</option>
+          <option value="Concluído">Concluído</option>
+          <option value="Aguardando retorno">Aguardando retorno</option>
+          <option value="Encerrado por falta de retorno">Encerrado por falta de retorno</option>
         </select>
-      </p>
 
-      <p>Link
-      <input type="url" id="link" name="link" placeholder="Link do Chamado (https://...)">
-      </p>
+      </div>
 
-      <textarea id="resolucao" name="resolucao" placeholder="Resumo da solução..." required></textarea>
+      <div class="form-group">
 
-      <button type="submit">Salvar Chamado</button>
+        <label for="categoria">Categoria</label>
+        <select name="categoria" id="categoria" required>
+        <option value="" disabled selected>Selecione a categoria</option>
+        <option value="Configuração sistêmica">Configuração sistêmica</option>
+        <option value="Erro">Erro</option>
+        <option value="Dúvida">Dúvida</option>
+        <option value="Solicitação">Solicitação</option>
+        <option value="Permissão no sistema">Permissão no sistema</option>
+        <option value="Atualização de informação">Atualização de informação</option>
+        <option value="Criação/Edição/Atualização cadastro usuários">Criação/Edição/Atualização cadastro usuários</option>
+        <option value="Limpeza Sispetro">Limpeza Sispetro</option>
+        <option value="Reinicialização de serviços">Reinicialização de serviços</option>
+        <option value="Edição/permissão em relatórios e layouts">Edição/permissão em relatórios e layouts</option>
+        <option value="Edição/Atualização de Qlik">Edição/Atualização de Qlik</option>
+        <option value="Edição/Atualização de Power BI">Edição/Atualização de Power BI</option>
+        <option value="Suporte">Suporte ao usuário</option>
+        <option value="Esclarecimento de dúvidas">Esclarecimento de dúvidas</option>
+        <option value="Habilitação de campo">Habilitação de campo</option>
+        </select>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="link">Link do Chamado</label>
+        <input type="url" id="link" name="link" placeholder="https://...">
+
+      </div>
+
+      <div class="form-group full">
+
+        <label for="resolucao">Resumo da Solução</label>
+        <textarea id="resolucao" name="resolucao" rows="3" required></textarea>
+
+      </div>
+
+      <div class="form-group full">
+
+        <button type="submit">Salvar Chamado</button>
+
+      </div>
+
     </form>
-
-    <div id="statusMsg">
-      <!-- Mensagem de status aparece aqui -->
-    </div>
-
-    <script>
-      const url = new URL(window.location.href);
-      if (url.searchParams.get('success') === '1') {
-        document.getElementById('statusMsg').innerText = "✅ Chamado salvo com sucesso!";
-      }
-    </script>
   </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('sucesso') === '1') {
+        alert('✅ Chamado salvo com sucesso.');
+        const form = document.querySelector('form');
+        if (form) {
+            form.reset();
+        }
+        history.replaceState(null, "", window.location.pathname);
+    }
+</script>
+
 </body>
 </html>

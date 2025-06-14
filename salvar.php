@@ -1,54 +1,55 @@
 <?php
-$dataSelecionada = $_GET['data'];
+// Ativa exibição de erros para debug
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-if (!$dataSelecionada) {
-  echo "❌ Data não fornecida.";
-  exit;
-}
+// Arquivo CSV
+$arquivoCSV = 'chamados.csv';
 
-$arquivo = fopen("chamados.csv", "r");
-if (!$arquivo) {
-  echo "❌ Erro ao abrir o arquivo de chamados.";
-  exit;
-}
-
-$registros = [];
-while (($linha = fgetcsv($arquivo, 1000, ",")) !== FALSE) {
-  list($numero, $portal, $dt_inicio, $dt_conclusao, $descricao, $cliente, $analista, $departamento, $categoria, $link, $resolucao) = $linha;
-  
-  if ($dt_conclusao === $dataSelecionada) {
-    $registros[] = [
-      'numero' => $numero,
-      'portal' => $portal,
-      'descricao' => $descricao,
-      'link' => $link,
-      'resolucao' => $resolucao
+// Dados do POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $dados = [
+        $_POST['numero'] ?? '',
+        $_POST['portal'] ?? '',
+        $_POST['dt_abertura'] ?? '',
+        $_POST['dt_conclusao'] ?? '',
+        $_POST['descricao'] ?? '',
+        $_POST['cliente'] ?? '',
+        $_POST['analista'] ?? '',
+        $_POST['departamento'] ?? '',
+        $_POST['status'] ?? '',
+        $_POST['categoria'] ?? '',
+        $_POST['link'] ?? '',
+        $_POST['resolucao'] ?? ''
     ];
-  }
+
+    // Verifica se o arquivo já existe (para evitar sobrescrever header)
+    $arquivoExiste = file_exists($arquivoCSV);
+
+    // Abre o CSV com codificação UTF-8 e separador ';'
+    if (($arquivo = fopen($arquivoCSV, 'a')) !== FALSE) {
+        // Se o arquivo não existe, escreve o cabeçalho
+        if (!$arquivoExiste) {
+            fputcsv($arquivo, [
+                'Número', 'Portal', 'Data Abertura', 'Data Conclusão',
+                'Descrição', 'Cliente', 'Analista', 'Departamento',
+                'Status', 'Categoria', 'Link', 'Resolução'
+            ], ';');
+        }
+
+        // Insere os dados no CSV com separador ';'
+        fputcsv($arquivo, $dados, ';');
+        fclose($arquivo);
+
+        // Mostra popup com JavaScript
+        echo "<script>
+                alert('✅ Chamado salvo com sucesso.');
+                window.location.href = '/chamados/index.html?sucesso=1';
+              </script>";
+        exit;
+    } else {
+        echo "<script>alert('❌ Erro ao abrir o arquivo CSV.');</script>";
+    }
+} else {
+    echo "<script>alert('❌ Requisição inválida.');</script>";
 }
-fclose($arquivo);
-
-// Agrupar por portal
-$portais = [];
-foreach ($registros as $r) {
-  $portal = ucfirst(trim($r['portal'])) ?: 'Outros';
-  $portais[$portal][] = $r;
-}
-
-// Gerar texto do relatório
-$dt_formatada = date('d/m/Y', strtotime($dataSelecionada));
-$diaSeguinte = date('d/m/Y', strtotime($dataSelecionada . ' +1 day'));
-
-echo "<pre>";
-echo "PLANTÃO NOC - Noturno ($dt_formatada - $diaSeguinte) Sistemas Gustavo Tiano\n\n";
-echo "Chamados Encerrados:\n\n";
-
-foreach ($portais as $portal => $chamados) {
-  echo "$portal:\n\n";
-  foreach ($chamados as $c) {
-    $link = $c['link'] ? $c['link'] : "(sem link)";
-    echo "$link – {$c['descricao']}{$c['resolucao']}\n\n";
-  }
-}
-echo "</pre>";
-?>

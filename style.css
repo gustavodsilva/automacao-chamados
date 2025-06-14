@@ -1,13 +1,13 @@
-/* NOVAS INCLUSÕES */
 :root {
-  --bg-primary: #0c111f;
-  --bg-secondary: #1c263b;
-  --accent: #3da9fc;
-  --text-primary: #e5f1ff;
-  --text-muted: #9cb4d8;
-  --radius: 12px;
-  --shadow: 0 8px 20px rgba(0,0,0,0.4);
-  --transition: 0.2s ease-in-out;
+--bg-primary: #0f0f0f;
+--bg-secondary: #1a1a1a;
+--accent: #e00034;
+--text-primary: #ffffff;
+--text-muted: #bbbbbb;
+--border-color: #292929;
+--radius: 12px;
+--shadow: 0 8px 20px rgba(0,0,0,0.4);
+--transition: 0.2s ease-in-out;
 }
 
 body {
@@ -47,14 +47,23 @@ h1 {
 
 form {
   display: grid;
-  gap: 16px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-@media (max-width: 768px) {
-  form {
-    grid-template-columns: 1fr;
-  }
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full {
+  grid-column: span 2;
+}
+
+form label {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  color: var(--text-muted);
 }
 
 input, select, textarea {
@@ -70,18 +79,15 @@ input, select, textarea {
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 2px rgba(61, 169, 252, 0.5);
+  box-shadow: 0 0 0 2px rgba(252, 61, 61, 0.5);
   background: rgba(255, 255, 255, 0.05);
 }
 
 textarea {
-  min-height: 100px;
   resize: vertical;
-  grid-column: span 3;
 }
 
 button {
-  grid-column: span 3;
   padding: 12px 0;
   border: none;
   border-radius: var(--radius);
@@ -91,34 +97,15 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 6px 16px rgba(61, 169, 252, 0.5);
+  box-shadow: 0 6px 16px rgba(252, 61, 61, 0.5);
 }
 
 button:hover {
-  background: #3294e6;
-  box-shadow: 0 8px 20px rgba(61, 169, 252, 0.65);
+  background: #e63232;
+  box-shadow: 0 8px 20px rgba(252, 61, 61, 0.65);
 }
 
-#statusMsg {
-  grid-column: span 3;
-  text-align: center;
-  margin-top: 8px;
-  font-weight: 600;
-  color: var(--accent);
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-
-#detalhe {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  min-height: 1px;
-}
-
-#resolucao {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  min-height: 100px;
+select option {
+  color: #111;
+  background-color: #f4f4f4;
 }
