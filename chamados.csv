@@ -1,4 +1,4 @@
-﻿Chamado;Plataforma;Data abert;Data fecha;Problema;Cliente;Analista;Departamento;Status;Categoria;Link chamado;Resumo da ação
+﻿Número;Portal;Data abert;Data Conclusão;Descrição;Cliente;Analista;Departamento;Status;Categoria;Link chamado;Resumo da ação
 9804;Jira;11/06/2025;12/06/2025;Disponibilidade de licença na BDP 3200;Chistian Durval Ferreira;Gustavo Tiano;Sistemas;Concluído;Limpeza Sispetro;https://allservices-helpdesk.atlassian.net/jira/servicedesk/projects/AL/queues/custom/73/AL-9804;Limpeza realizada na BDP mencionada pelo usuário.
 9803;Jira;11/06/2025;12/06/2025;Disponibilidade de licença BDP 3300;Luis Lima;Gustavo Tiano;Sistemas;Concluído;Limpeza Sispetro;https://allservices-helpdesk.atlassian.net/jira/servicedesk/projects/AL/queues/custom/73/AL-9803;Licença liberada para o usuário
 269928;Manager;;12/06/2025;Erro de integração de Ordem de Compra;Denis Alves de Alcantara;Gustavo Tiano;Sistemas;Repassado para N2;Configuração sistêmica;https://helpdesk.gruporefit.com/WorkOrder.do?woMode=viewWO&woID=269928;Chamado transferido para fila de Sustentação por se tratar de configurações no integrador de OC entre bases.
@@ -6,7 +6,6 @@
 2159233;manager;;12/06/2025;Liberação de licença na BDP 3300;David Silva;Gustavo Tiano;Sistemas;Concluído;Limpeza Sispetro;;Licença liberada para o usuário conforme solicitado.
 270983;Manager;13/06/2025;14/06/2025;Travamento na bdp 2200 no processo de faturamento de nota;Vinicius Goes Theophilo;Gustavo Tiano;Sistemas;Concluído;Configuração sistêmica;https://helpdesk.gruporefit.com/WorkOrder.do?woMode=viewWO&woID=270983#resolution;Reinicialização do Hermes dentro do servidor.
 270956;Manager;13/06/2025;14/06/2025;Erro durante utilização, BDP 3300 fora de funcionamento;Fernanda Rodrigues da Costa Sales;Gustavo Tiano;Sistemas;Concluído;Configuração sistêmica;https://helpdesk.gruporefit.com/WorkOrder.do?woMode=viewWO&woID=270956#details;Base reiniciada dentro do servidor Hermes.
-;;;;;;;;;;;
-;;;;;;;;;;;
-;;;;;;;;;;;
-9855;Manager;2025-06-13;2025-06-14;"Erro ao utilizar sistema BDP 3300";"Rodrigo Pereira Curvelo";"Gustavo Tiano";Sistemas;Concluído;"Configuração sistêmica";https://allservices-helpdesk.atlassian.net/jira/servicedesk/projects/AL/queues/custom/73/AL-9855;"Reinicialização realizada dentro do servidor do hermes."
+9855;Manager;13/06/2025;14/06/2025;Erro ao utilizar sistema BDP 3300;Rodrigo Pereira Curvelo;Gustavo Tiano;Sistemas;Concluído;Configuração sistêmica;https://allservices-helpdesk.atlassian.net/jira/servicedesk/projects/AL/queues/custom/73/AL-9855;Reinicialização realizada dentro do servidor do hermes.
+9852;Jira;13/06/2025;14/06/2025;Sem licença na BDP 3400;Alexandre Souza;Gustavo Tiano;Sistemas;Concluído;Limpeza Sispetro;https://allservices-helpdesk.atlassian.net/jira/servicedesk/projects/AL/queues/custom/73/AL-9852;Limpeza de licenças realizada no executável do hermes.
+9848;Jira;13/06/2025;14/06/2025;Liberação de licença na BDP 3400;Leydiane Pereira;Gustavo Tiano;Sistemas;Concluído;Limpeza Sispetro;https://allservices-helpdesk.atlassian.net/jira/servicedesk/projects/AL/queues/custom/73/AL-9848;Limpeza de licença realizado no executável do hermes.
