@@ -1,0 +1,16 @@
+{
+    "name": "gustavo.tiano/chamados",
+    "description": "controle de chamados",
+    "autoload": {
+        "psr-4": {
+            "GustavoTiano\\Chamados\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "gustavodsilva",
+            "email": "gustavo.gsilva83@gmail.com"
+        }
+    ],
+    "require": {}
+}
